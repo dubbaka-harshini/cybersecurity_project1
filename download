@@ -1,0 +1,23 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Environment variables (NEVER commit secrets)
+.env
+
+# Database (contains user data — do not commit)
+database/users.db
+
+# Logs
+logs/*.log
+
+# OS / editor junk
+.DS_Store
+.vscode/
+.idea/

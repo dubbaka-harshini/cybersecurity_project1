@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}CyberAuth Toolkit — Secure Authentication Demo{% endblock %}
+{% block content %}
+<section class="hero">
+    <div class="hero-badge">🔒 SECURE BY DESIGN</div>
+    <h1>Cybersecurity <span class="accent">Authentication</span> Toolkit</h1>
+    <p class="hero-subtitle">
+        A hands-on demonstration of secure user registration, login, and session
+        management &mdash; built with Flask, hardened against common web
+        authentication vulnerabilities.
+    </p>
+    <div class="hero-actions">
+        <a href="{{ url_for('register') }}" class="btn btn-primary">Create an Account</a>
+        <a href="{{ url_for('login') }}" class="btn btn-secondary">Login</a>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature-card">
+        <div class="feature-icon">🔑</div>
+        <h3>Salted Password Hashing</h3>
+        <p>Passwords are never stored in plaintext — PBKDF2-SHA256 with a unique salt per user.</p>
+    </div>
+    <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Real-Time Strength Meter</h3>
+        <p>Instant client-side feedback on password quality, backed by matching server-side rules.</p>
+    </div>
+    <div class="feature-card">
+        <div class="feature-icon">🚫</div>
+        <h3>Brute-Force Protection</h3>
+        <p>Accounts auto-lock after repeated failed logins; rate limiting throttles rapid attempts.</p>
+    </div>
+    <div class="feature-card">
+        <div class="feature-icon">🛡️</div>
+        <h3>CSRF & Session Hardening</h3>
+        <p>Token-protected forms, HttpOnly cookies, session fixation prevention, and idle timeouts.</p>
+    </div>
+    <div class="feature-card">
+        <div class="feature-icon">✅</div>
+        <h3>Strict Input Validation</h3>
+        <p>Server-side validation on every field, parameterized SQL queries, generic error messages.</p>
+    </div>
+    <div class="feature-card">
+        <div class="feature-icon">📜</div>
+        <h3>Audit Logging</h3>
+        <p>Every login, logout, and registration event is recorded for traceability.</p>
+    </div>
+</section>
+{% endblock %}

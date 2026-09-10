@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — CyberAuth Toolkit{% endblock %}
+{% block content %}
+<section class="dashboard">
+    <div class="dashboard-header">
+        <h2>Welcome, {{ user['username'] }} 👋</h2>
+        <p class="auth-subtitle">This page is only reachable by an authenticated session.</p>
+    </div>
+
+    <div class="dashboard-grid">
+        <div class="dash-card">
+            <h4>Account Info</h4>
+            <ul class="info-list">
+                <li><span>Username</span><strong>{{ user['username'] }}</strong></li>
+                <li><span>Email</span><strong>{{ user['email'] }}</strong></li>
+                <li><span>Account Created</span><strong>{{ user['created_at'] }}</strong></li>
+                <li><span>Last Login</span><strong>{{ user['last_login'] or 'This is your first login' }}</strong></li>
+            </ul>
+        </div>
+
+        <div class="dash-card">
+            <h4>Security Status</h4>
+            <ul class="info-list">
+                <li><span>Password Storage</span><strong>PBKDF2-SHA256 (salted)</strong></li>
+                <li><span>Session Cookie</span><strong>HttpOnly · SameSite=Lax</strong></li>
+                <li><span>Failed Login Attempts</span><strong>{{ user['failed_login_attempts'] }}</strong></li>
+                <li><span>CSRF Protection</span><strong>Enabled</strong></li>
+            </ul>
+        </div>
+    </div>
+
+    <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+</section>
+{% endblock %}
